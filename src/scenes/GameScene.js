@@ -4,6 +4,9 @@ import Phaser from 'phaser';
 // prefabs
 import {Player} from '/src/prefabs/Player';
 
+// config
+import config from '/src/gameConfig';
+
 
 export class GameScene extends Phaser.Scene {
   constructor() {
@@ -22,9 +25,10 @@ export class GameScene extends Phaser.Scene {
 
   update() {
     this.player.move();
+    this.background.tilePositionX += 0.5;
   }
 
   createBackground() {
-    this.add.sprite(0, 0, 'background').setOrigin(0, 0);
+    this.background = this.add.tileSprite(0, 0, config.width, config.height, 'background').setOrigin(0, 0);
   }
 }
