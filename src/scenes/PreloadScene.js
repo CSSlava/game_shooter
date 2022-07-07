@@ -8,6 +8,7 @@ export class PreloadScene extends Phaser.Scene {
 
   preload() {
     this.load.atlas('helicopter', 'src/assets/sprites/helicopter.png', 'src/assets/sprites/helicopter.json');
+    this.load.atlas('enemy', 'src/assets/sprites/enemy.png', 'src/assets/sprites/enemy.json');
   }
 
   create() {
