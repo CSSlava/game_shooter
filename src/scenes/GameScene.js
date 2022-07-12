@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 
 // prefabs
 import {Player} from '/src/prefabs/Player';
-import {Enemy} from '/src/prefabs/Enemy';
+import {Enemies} from '/src/prefabs/Enemies';
 
 // config
 import config from '/src/gameConfig';
@@ -20,14 +20,15 @@ export class GameScene extends Phaser.Scene {
 
   create() {
     this.createBackground();
-
     this.player = new Player(this);
-    this.enemy = new Enemy(this);
+    this.enemies = new Enemies(this);
+    this.enemies.createEnemy();
+    this.enemies.createEnemy();
+    this.enemies.createEnemy();
   }
 
   update() {
     this.player.move();
-    this.enemy.move();
     this.background.tilePositionX += 0.5;
   }
 
